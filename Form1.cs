@@ -24,7 +24,7 @@ namespace QLNV
             nhanvien nv1 = new nhanvien();
             nv1.Show();
         }
-
+        //
         private void Form1_Load(object sender, EventArgs e)
         {
             lb_id.Text= logincs.ID_USER.ToString();
