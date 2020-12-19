@@ -30,10 +30,10 @@ namespace QLNV
             lb_id.Text= logincs.ID_USER.ToString();
             lb_level.Text = logincs.LEVEL.ToString();
             lb_user.Text = logincs.USERNAME.ToString();
-            if(Convert.ToInt32(logincs.ID_USER.ToString()) == 3)
+            if (Convert.ToInt32(logincs.LEVEL.ToString()) != 3)
             {
-                button4.Enabled = true;
-            }    
+                button4.Enabled = false;
+            }
         }
 
         private void lb_level_Click(object sender, EventArgs e)
@@ -63,7 +63,8 @@ namespace QLNV
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            admin ad1 = new admin();
+            ad1.Show();
         }
     }
 }

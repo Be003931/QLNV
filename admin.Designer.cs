@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tbcapdo = new System.Windows.Forms.TextBox();
             this.tbmatkhau = new System.Windows.Forms.TextBox();
             this.tbtendangnhap = new System.Windows.Forms.TextBox();
@@ -42,10 +44,22 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
+            this.qL_NVDataSet_nhanvien = new QLNV.QL_NVDataSet_nhanvien();
+            this.qLNVDataSetnhanvienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qL_NVDataSet1 = new QLNV.QL_NVDataSet1();
+            this.aDMINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.aDMINTableAdapter = new QLNV.QL_NVDataSet1TableAdapters.ADMINTableAdapter();
+            this.mAADMINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uSERNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pASSWORDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cAPDODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NVDataSet_nhanvien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNVDataSetnhanvienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NVDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aDMINBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -111,6 +125,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(642, 181);
             this.panel1.TabIndex = 4;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Yellow;
+            this.button2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(508, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 47);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "LƯU";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tbcapdo
             // 
@@ -192,24 +218,69 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.mAADMINDataGridViewTextBoxColumn,
+            this.uSERNAMEDataGridViewTextBoxColumn,
+            this.pASSWORDDataGridViewTextBoxColumn,
+            this.cAPDODataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.aDMINBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(1, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(642, 183);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // button2
+            // qL_NVDataSet_nhanvien
             // 
-            this.button2.BackColor = System.Drawing.Color.Yellow;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(508, 59);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 47);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "LƯU";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.qL_NVDataSet_nhanvien.DataSetName = "QL_NVDataSet_nhanvien";
+            this.qL_NVDataSet_nhanvien.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // qLNVDataSetnhanvienBindingSource
+            // 
+            this.qLNVDataSetnhanvienBindingSource.DataSource = this.qL_NVDataSet_nhanvien;
+            this.qLNVDataSetnhanvienBindingSource.Position = 0;
+            // 
+            // qL_NVDataSet1
+            // 
+            this.qL_NVDataSet1.DataSetName = "QL_NVDataSet1";
+            this.qL_NVDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aDMINBindingSource
+            // 
+            this.aDMINBindingSource.DataMember = "ADMIN";
+            this.aDMINBindingSource.DataSource = this.qL_NVDataSet1;
+            // 
+            // aDMINTableAdapter
+            // 
+            this.aDMINTableAdapter.ClearBeforeFill = true;
+            // 
+            // mAADMINDataGridViewTextBoxColumn
+            // 
+            this.mAADMINDataGridViewTextBoxColumn.DataPropertyName = "MA_ADMIN";
+            this.mAADMINDataGridViewTextBoxColumn.HeaderText = "MA_ADMIN";
+            this.mAADMINDataGridViewTextBoxColumn.Name = "mAADMINDataGridViewTextBoxColumn";
+            // 
+            // uSERNAMEDataGridViewTextBoxColumn
+            // 
+            this.uSERNAMEDataGridViewTextBoxColumn.DataPropertyName = "USERNAME";
+            this.uSERNAMEDataGridViewTextBoxColumn.HeaderText = "USERNAME";
+            this.uSERNAMEDataGridViewTextBoxColumn.Name = "uSERNAMEDataGridViewTextBoxColumn";
+            this.uSERNAMEDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // pASSWORDDataGridViewTextBoxColumn
+            // 
+            this.pASSWORDDataGridViewTextBoxColumn.DataPropertyName = "PASSWORD";
+            this.pASSWORDDataGridViewTextBoxColumn.HeaderText = "PASSWORD";
+            this.pASSWORDDataGridViewTextBoxColumn.Name = "pASSWORDDataGridViewTextBoxColumn";
+            this.pASSWORDDataGridViewTextBoxColumn.Width = 190;
+            // 
+            // cAPDODataGridViewTextBoxColumn
+            // 
+            this.cAPDODataGridViewTextBoxColumn.DataPropertyName = "CAPDO";
+            this.cAPDODataGridViewTextBoxColumn.HeaderText = "CAPDO";
+            this.cAPDODataGridViewTextBoxColumn.Name = "cAPDODataGridViewTextBoxColumn";
             // 
             // admin
             // 
@@ -226,6 +297,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NVDataSet_nhanvien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLNVDataSetnhanvienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qL_NVDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aDMINBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +322,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
+        private QL_NVDataSet_nhanvien qL_NVDataSet_nhanvien;
+        private System.Windows.Forms.BindingSource qLNVDataSetnhanvienBindingSource;
+        private QL_NVDataSet1 qL_NVDataSet1;
+        private System.Windows.Forms.BindingSource aDMINBindingSource;
+        private QL_NVDataSet1TableAdapters.ADMINTableAdapter aDMINTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mAADMINDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uSERNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pASSWORDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cAPDODataGridViewTextBoxColumn;
     }
 }

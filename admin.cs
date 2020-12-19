@@ -49,6 +49,8 @@ namespace QLNV
 
         private void admin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'qL_NVDataSet1.ADMIN' table. You can move, or remove it, as needed.
+            this.aDMINTableAdapter.Fill(this.qL_NVDataSet1.ADMIN);
             load();
         }
 

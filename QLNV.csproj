@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_NVDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QL_NVDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QL_NVDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QL_NVDataSet_nhanvien.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,17 @@
     </None>
     <None Include="QL_NVDataSet.xss">
       <DependentUpon>QL_NVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NVDataSet1.xsc">
+      <DependentUpon>QL_NVDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QL_NVDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QL_NVDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QL_NVDataSet1.xss">
+      <DependentUpon>QL_NVDataSet1.xsd</DependentUpon>
     </None>
     <None Include="QL_NVDataSet_nhanvien.xsc">
       <DependentUpon>QL_NVDataSet_nhanvien.xsd</DependentUpon>
